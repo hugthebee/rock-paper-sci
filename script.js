@@ -1,5 +1,6 @@
 let score = 0;
 let match = 0;
+let playerChoice;
 
 const scorespan = document.querySelector(".score");
 const computer = document.querySelector(".computer");
@@ -8,11 +9,17 @@ const winner = document.querySelector(".winner");
 winner.textContent = "";
 
 const rock = document.querySelector(".rock");
-rock.addEventListener("click", game("rock"));
+rock.addEventListener("click", function (){playerChoice="rock";
+game(playerChoice);
+});
 const paper = document.querySelector(".paper");
-paper.addEventListener("click", game("paper"));
+paper.addEventListener("click", function (){playerChoice="paper";
+game(playerChoice);
+});
 const sci = document.querySelector(".sci");
-sci.addEventListener("click", game("scissors"));
+sci.addEventListener("click",  function (){playerChoice="scissors";
+game(playerChoice);
+});
 
 function getComputerChoice() {
     let ans;

@@ -1,0 +1,11 @@
+.buttons{
+    margin-top: 150px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+body{
+    text-align: center;
+}
