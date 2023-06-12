@@ -3,9 +3,45 @@
     margin-bottom: 40px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+img{
+    height: 200px;
+    width:200px;
+}
+.rock{
+    flex:auto;
+    background-color: #d6967e;
+}
+
+.paper{
+    flex:auto;
+    background-color: blanchedalmond;
+}
+
+.sci{
+    flex:auto;
+    background-color:#f29d7e;
+}
+
+.choice{
+    margin-top:20px;
+    height:30px;
+}
+
+.winner{
+    font-size: 100px;
+    font-weight: bold;
+    color: bisque;
+}
+
+.win{
+    background-color: black;
 }
 
 body{
     text-align: center;
+    padding: 20px;
 }

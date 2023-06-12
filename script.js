@@ -5,20 +5,45 @@ let playerChoice;
 const scorespan = document.querySelector(".score");
 const computer = document.querySelector(".computer");
 const winner = document.querySelector(".winner");
+const choice = document.querySelector(".choice");
+const body = document.querySelector("body");
 
 winner.textContent = "";
+choice.hidden = true;
 
 const rock = document.querySelector(".rock");
 rock.addEventListener("click", function (){playerChoice="rock";
+body.classList.remove("sci");
+body.classList.remove("paper");
+body.classList.add("rock");
 game(playerChoice);
 });
 const paper = document.querySelector(".paper");
 paper.addEventListener("click", function (){playerChoice="paper";
+body.classList.remove("sci");
+body.classList.remove("rock");
+body.classList.add("paper");
 game(playerChoice);
 });
 const sci = document.querySelector(".sci");
 sci.addEventListener("click",  function (){playerChoice="scissors";
+body.classList.remove("paper");
+body.classList.remove("rock");
+body.classList.add("sci");
 game(playerChoice);
+});
+
+choice.addEventListener("click",function (){
+    score = 0;
+    match = 0;
+    choice.hidden = true;
+    winner.textContent = "";
+    computer.textContent="Computer's Choice: ";
+    scorespan.textContent="Score: ";
+    body.classList.remove("win");
+    body.classList.remove("sci");
+    body.classList.remove("paper");
+    body.classList.remove("rock");
 });
 
 function getComputerChoice() {
@@ -95,8 +120,15 @@ function game(playerChoice) {
 
     if (match === 5 && score > (5 - score)) {
         winner.textContent = "You win!!!";
+        choice.hidden = false;
+        choice.textContent = "Play again?";
+        body.classList.add("win");
+
     }
     else if(match===5){
         winner.textContent = "You lost :(";
+        choice.hidden = false;
+        choice.textContent = "Play again?";
+        body.classList.add("win");
     }
 }
